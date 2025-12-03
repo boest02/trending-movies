@@ -1,0 +1,13 @@
+.movie-list > ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+
+    li {
+        list-style: none;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;        
+    }
+}
