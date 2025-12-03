@@ -1,5 +1,4 @@
-import { useEffect, useState } from "react";
-import { fetchPopularMovies } from "../api/tmdb";
+import { usePopularMovies } from "../api/tmdb";
 import type { Movie } from "../api/tmdb";
 import { Link } from "react-router-dom";
 
@@ -12,20 +11,17 @@ import "../css/home.css";
  * Displays Trending movies from API
  */
 const Home = () => {
-  const [movies, setMovies] = useState<Movie[]>([]);
+  const { data: movies, isLoading, error } = usePopularMovies();
 
-  useEffect(() => {
-    const loadMovies = async () => {
-      try {
-        const popularMovies = await fetchPopularMovies();
-        setMovies(popularMovies);
-      } catch (error) {
-        console.error("Error fetching popular movies:", error);
-      }
-    };
+  if (isLoading) return <p>Loading movies...</p>;
 
-    loadMovies();
-  }, []);
+  if (error)
+    return (
+      <p>
+        Error loading movies.{" "}
+        {error instanceof Error ? error.message : String(error)}
+      </p>
+    );
 
   return (
     <>
@@ -35,7 +31,7 @@ const Home = () => {
 
       <section className="movie-list" aria-label="Trending Movies">
         <ul>
-          {movies.map((movie) => (
+          {movies && movies.map((movie) => (
             <li key={movie.id}>
               <article>
                 <Link to={`/movie/${movie.id}`}>
