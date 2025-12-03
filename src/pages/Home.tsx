@@ -12,11 +12,11 @@ import "../css/home.css";
 const Home = () => {
   const { data: movies, isLoading, error } = usePopularMovies();
 
-  if (isLoading) return <p>Loading movies...</p>;
+  if (isLoading) return <p data-testid="loading-test">Loading movies...</p>;
 
   if (error)
     return (
-      <p>
+      <p data-testid="error-test">
         Error loading movies.{" "}
         {error instanceof Error ? error.message : String(error)}
       </p>

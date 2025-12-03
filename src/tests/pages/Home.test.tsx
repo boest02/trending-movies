@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react";
+import { render, screen} from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import Home from "../../pages/Home";
 import { usePopularMovies } from "../../api/tmdb";
@@ -33,6 +33,42 @@ describe("Home Page", () => {
     mockMovies.forEach((movie) => {
       expect(screen.queryByText(movie.title)).not.toBeNull();
     });
+
+  });
+
+  it("renders loading...", async () => {
+    (usePopularMovies as unknown as Mock).mockReturnValue({
+      data: null,
+      isLoading: true,
+      error: null,
+    });
+
+    render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>
+    );
+
+    const element = await screen.findByTestId('loading-test');
+    expect(element).toBeDefined();
+
+  });
+
+  it("renders error...", async () => {
+    (usePopularMovies as unknown as Mock).mockReturnValue({
+      data: null,
+      isLoading: false,
+      error: { message: "Failed to fetch" },
+    });
+
+    render(
+      <MemoryRouter>
+        <Home />
+      </MemoryRouter>
+    );
+
+    const element = await screen.findByTestId('error-test');
+    expect(element).toBeDefined()
 
   });
 });
