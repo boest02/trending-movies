@@ -26,6 +26,8 @@ A React + TypeScript movie discovery app that displays trending films, shows det
 git clone https://github.com/boest02/trending-movies.git
 cd trending-movies
 npm install    # or yarn install
+cp .env.sample .env  # copy sample to .env to configure
+# add your API key to the  VITE_TMDB_API_KEY variable
 ```
 
 ## 🗂️ Project Structure
