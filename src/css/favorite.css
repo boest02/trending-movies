@@ -1,0 +1,18 @@
+.favorite-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    padding: 2px 5px;
+    background: rgb(21, 21, 21, 0.2);
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+
+    &:hover {
+        scale: 1.2;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
