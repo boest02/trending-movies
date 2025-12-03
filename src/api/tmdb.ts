@@ -47,5 +47,5 @@ const usePopularMovies = () => {
   });
 };
 
-export { usePopularMovies };
+export { usePopularMovies, fetchPopularMovies };
 export type { Movie };
