@@ -3,8 +3,20 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 30px;
+    padding-inline-start: 0;
 
     li {
         list-style: none;      
+    }
+}
+
+@media (max-width: 720px) {
+    .home-title {
+        font-size: 2rem;
+    }
+
+    .movie-list > ul {
+        width: 100%;
+        gap: 20px 10px;
     }
 }
