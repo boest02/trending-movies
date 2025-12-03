@@ -30,6 +30,7 @@ const Favorite = ({ initial = false, onToggle }: FavoriteProps) => {
       onClick={toggleFavorite}
       title={favorite ? "Remove from favorites" : "Add to favorites"}
       aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
+      data-testid="favorite-btn"
     >
       {favorite ? "❤️" : "🤍"}
     </button>

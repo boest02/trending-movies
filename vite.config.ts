@@ -15,7 +15,7 @@ export default defineConfig({
     silent: false,
 
     // Use the verbose reporter to display test names
-    // reporters: 'verbose',
+    reporters: 'verbose',
 
     // Include all test files matching this pattern
     include: ["src/tests/**/*.test.tsx"],
