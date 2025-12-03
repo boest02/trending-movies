@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 
-const API_KEY = "86cecf11be63b7d9469b0ff19d1a667a";
-const BASE_URL = "https://api.themoviedb.org/3";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
+const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL;
 
 interface Movie {
   id: number;

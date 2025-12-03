@@ -3,6 +3,8 @@ import type { Movie } from "../api/tmdb";
 
 import "../css/movieCard.css";
 
+const POSTER_BASE_URL = import.meta.env.VITE_POSTER_200_BASE_URL;
+
 type MovieCardProps = {
   movie: Movie;
 };
@@ -16,7 +18,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
     <article className="movie-card">
       <Link to={`/movie/${movie.id}`}>
         <img
-          src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
+          src={`${POSTER_BASE_URL}/${movie.poster_path}`}
           alt={movie.title}
           loading="lazy"
         />
