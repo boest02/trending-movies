@@ -1,6 +1,5 @@
+import MovieCard from "../components/MovieCard";
 import { usePopularMovies } from "../api/tmdb";
-import type { Movie } from "../api/tmdb";
-import { Link } from "react-router-dom";
 
 // import css
 import "../css/home.css";
@@ -33,12 +32,7 @@ const Home = () => {
         <ul>
           {movies && movies.map((movie) => (
             <li key={movie.id}>
-              <article>
-                <Link to={`/movie/${movie.id}`}>
-                  <h2>{movie.title}</h2>
-                  <p>{movie.release_date}</p>
-                </Link>
-              </article>
+              <MovieCard movie={movie} />
             </li>
           ))}
         </ul>

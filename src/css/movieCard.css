@@ -1,0 +1,19 @@
+.movie-card {
+    position: relative;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+    padding-bottom: 10px;
+
+    &:hover,
+    &:focus-within {
+        outline: 1px solid #646cff;
+    }
+
+    img {
+        height: 250px;
+    }
+
+    p {
+        color: #fff;
+        font-weight: bold;
+    }
+}
