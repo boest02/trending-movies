@@ -8,6 +8,8 @@ import "../css/movieCard.css";
 
 const POSTER_BASE_URL = import.meta.env.VITE_POSTER_SMALL_BASE_URL;
 
+const MAX_CHARS = 30;
+
 // Props for MovieCard component
 type MovieCardProps = {
   movie: Movie;
@@ -25,7 +27,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
 
   // Determine display title with truncation if necessary to not overflow
   const displayTitle =
-    movie.title.length > 20 ? movie.title.slice(0, 17) + "..." : movie.title;
+    movie.title.length > MAX_CHARS ? movie.title.slice(0, MAX_CHARS - 3) + "..." : movie.title;
 
   return (
     <article className="movie-card" data-testid="movie-card">
@@ -37,7 +39,6 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         <ImageLoader
           src={`${POSTER_BASE_URL}/${movie.poster_path}`}
           alt={movie.title}
-          height="300px"
         />
         <p title={movie.title}>{displayTitle}</p>
       </Link>
