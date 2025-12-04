@@ -20,29 +20,82 @@ A React + TypeScript movie discovery app that displays trending films, shows det
 - Routing and navigation via react-router.  
 - Fetching and caching via TanStack Query.  
 
-## 🚀 Getting Started / Installation
-
-```bash
-git clone https://github.com/boest02/trending-movies.git
-cd trending-movies
-npm install    # or yarn install
-cp .env.sample .env  # copy sample to .env to configure
-# add your API key to the  VITE_TMDB_API_KEY variable
-```
 
 ## 🗂️ Project Structure
 
 ```bash
-/src
-  /api        # API helper functions
-  /components # React components
-  /pages      # Page-level components (Home, Movie)
-  /styles     # Global styles or CSS modules
-  App.tsx
-  main.tsx
-.env          # For API keys
-README.md
-package.json
+├── README.md
+├── src
+│   ├── api                           # API helper functions
+│   ├── components                    # React components
+│   ├── css                           # Global styles or CSS modules
+│   ├── hooks                         # Custom react hooks 
+│   ├── pages                         # Page-level components (React Router)
+│   └── tests                         # all tests
+│       ├── components                # component tests
+│       ├── mocks                     # mock data
+│       └── pages                     # page tests
+
 ```
+
+## 🚀 Getting Started / Installation
+
+Cloning the repo from github [Github Link](https://github.com/boest02/trending-movies)
+
+```bash
+git clone https://github.com/boest02/trending-movies.git
+```
+
+Should clone to the folder listed below
+
+```bash
+cd trending-movies
+```
+
+Inside that folder you can run 
+
+```bash
+npm install    # note: I'm using node 24.11.1
+```
+
+There is a sample .env file (.env.sample) that can be copied and the API key can be added there  
+
+```bash
+cp .env.sample .env  # copy sample to .env to configure
+# add your API key to the  VITE_TMDB_API_KEY variable
+```
+
+Start the dev server:
+
+```bash
+npm run dev
+# or
+# yarn dev
+```
+
+Open your browser at the port Vite reports (usually http://localhost:5173).
+
+## 🛣️ Roadmap
+
+Possible improvements with more time:
+
+- Add pagination... (page support in API)
+  - can get # of pages from API, so could list page #'s and next page navigation
+  - or could use infinite scrolling to load each new page as the user scrolls
+- Add a search bar for filtering movies by title, or more
+- Display additional metadata:
+  - genres
+  - cast
+  - etc
+- Add dark and light theme support
+
+## 🧾 Notes
+
+Environment variables must start with VITE_ to be exposed to the client by Vite (for example VITE_TMDB_API_KEY).
+
+Do not commit your .env file. It is currently added to .gitignore.
+
+
+
 
 
