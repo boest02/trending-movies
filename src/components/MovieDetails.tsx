@@ -23,7 +23,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
   };
 
   return (
-    <article className="movie-details">
+    <article className="movie-details" data-testid="movie-details">
       <Favorite
         initial={isFavorite(movie.id)}
         onToggle={() => toggleFavorite(movie.id)}

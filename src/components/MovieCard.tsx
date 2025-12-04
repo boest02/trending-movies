@@ -28,7 +28,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
     movie.title.length > 20 ? movie.title.slice(0, 17) + "..." : movie.title;
 
   return (
-    <article className="movie-card">
+    <article className="movie-card" data-testid="movie-card">
       <Favorite
         initial={isFavorite(movie.id)}
         onToggle={() => toggleFavorite(movie.id)}

@@ -5,8 +5,12 @@ import "../css/favorite.css";
 // props for favorite component, initial value and callback on toggle
 type FavoriteProps = {
   initial?: boolean;
-  onToggle?: (favorite: boolean) => void;
+  onToggle: (favorite: boolean) => void; // requires a toggle function
 };
+
+// define constants
+const FAVORITE = '❤️';
+const NOT_FAVORITE = '🤍'
 
 /**
  * Favorite Component
@@ -32,7 +36,7 @@ const Favorite = ({ initial = false, onToggle }: FavoriteProps) => {
       aria-label={favorite ? "Remove from favorites" : "Add to favorites"}
       data-testid="favorite-btn"
     >
-      {favorite ? "❤️" : "🤍"}
+      {favorite ? FAVORITE : NOT_FAVORITE}
     </button>
   );
 };

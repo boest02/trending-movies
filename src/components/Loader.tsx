@@ -17,8 +17,8 @@ const Loader = ({
     >
       <div className="ml-actions">
         <div className="ml-spinner" aria-hidden="true" />
-        <div className="ml-message">
-          <span className="visually-hidden" data-testid="loading-test">
+        <div className="ml-message" data-testid="loading-test">
+          <span className="visually-hidden">
             Loading
           </span>
           {message}
