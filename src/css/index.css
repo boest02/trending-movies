@@ -21,13 +21,7 @@ a {
   &:hover {
     color: lime;
     text-decoration: underline;
-  }
-
-  &::after {
-    content: '🔗';
-    font-size: 85%;
-    margin-left: 5px;
-  }
+  }  
 }
 
 body {

@@ -11,6 +11,12 @@
     max-width: 900px;
     min-height: 600px;
 
+    a::after {
+        content: '🔗';
+        font-size: 85%;
+        margin-left: 5px;
+    }
+
     .title-area {
         h1 {
             margin: 10px;
@@ -24,10 +30,6 @@
             text-align: left;
             font-size: 1rem;
             font-style: italic;
-
-            a {
-                color: red;
-            }
         }
     }
 
