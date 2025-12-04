@@ -2,7 +2,7 @@ import MovieDetails from "../components/MovieDetails";
 import Loader from "../components/Loader";
 
 import { useParams, useNavigate } from "react-router-dom";
-import { useMovie } from "../api/tmdb";
+import { useMovie } from "../hooks/useMovie";
 
 /**
  * Movie Page Component

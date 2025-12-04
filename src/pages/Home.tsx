@@ -1,7 +1,7 @@
 import MovieCard from "../components/MovieCard";
 import Loader from "../components/Loader";
 
-import { usePopularMovies } from "../api/tmdb";
+import { usePopularMovies } from "../hooks/usePopularMovies";
 
 // import css
 import "../css/home.css";

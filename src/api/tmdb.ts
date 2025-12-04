@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 
 const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = import.meta.env.VITE_TMDB_BASE_URL;
@@ -42,52 +41,5 @@ const fetchMovieById = async (id: string): Promise<Movie> => {
   return res.json();
 };
 
-/**
- * Custom hook that fetches the list of trending movies.
- *
- * Uses TanStack Query to:
- * - cache results under the "trending-movies" query key
- * - handle loading, error, and refetching states automatically
- *
- * @returns {UseQueryResult<Movie[]>} Query result object containing:
- *   - data: the list of trending movies
- *   - isLoading: loading status
- *   - error: error information
- *   - refetch: function to manually refetch
- */
-
-const usePopularMovies = () => {
-  return useQuery<Movie[], Error>({
-    queryKey: ['popular-movies'],
-    queryFn: fetchPopularMovies,
-    staleTime: 1000 * 60 * 5, // 5 minutes before considered stale
-    refetchOnWindowFocus: true, // refetch when tab is focused
-  });
-};
-
-
-
-/*
- * Custom hook that fetches detailed information about a specific movie by its ID.
- * Uses TanStack Query to:
- * - cache results under the "movie" query key with the movie ID
- * - handle loading, error, and refetching states automatically
- *
- * @param {string | undefined} id - The ID of the movie to fetch details for
- * @returns {UseQueryResult<Movie>} Query result object containing:
- *   - data: detailed information about the movie
- *   - isLoading: loading status
- *   - error: error information
- *   - refetch: function to manually refetch
- */
-
-const useMovie = (id: string | undefined) => {
-  return useQuery<Movie, Error>({
-    queryKey: ["movie", id],
-    queryFn: () => fetchMovieById(id!),
-    enabled: !!id,
-  });
-};
-
-export { usePopularMovies, useMovie, fetchPopularMovies, fetchMovieById };
+export { fetchPopularMovies, fetchMovieById };
 export type { Movie };
