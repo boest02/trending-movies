@@ -1,0 +1,129 @@
+.movie-details {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 10px 25px 15px rgba(66, 3, 3, 0.1);
+    max-width: 900px;
+
+    .title-area {
+        h1 {
+            margin: 10px;
+            font-size: 2.3rem;
+            ;
+        }
+
+        p {
+            margin: 10px auto;
+            width: 90%;
+            text-align: left;
+            font-size: 1rem;
+            font-style: italic;
+        }
+    }
+
+    .details-table {
+        width: 70%;
+
+        dl {
+            display: flex;
+            flex-direction: column;
+            margin-block-start: 0;
+            margin-block-end: 0;
+            filter: drop-shadow(.3rem .3rem 0.5rem #000);
+
+            div {
+                display: flex;
+                flex-direction: row;
+                padding: 2px 0;
+
+                dt,
+                dd {
+                    outline: 1px solid #fff;
+                    box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.7);
+                }
+
+                dt {
+                    font-weight: bold;
+                    width: 30%;
+                    padding-right: 10px;
+                    text-align: right;
+                    margin: 0;
+                }
+
+                dd {
+                    width: 70%;
+                    margin: 0;
+                    padding-left: 10px;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+    img {
+        border-radius: 25px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        object-fit: cover;
+        width: auto;
+        margin: 10px auto;
+        height: auto;
+        max-height: 850px;
+        filter: drop-shadow(.5rem .5rem 0.7rem #fff);
+    }
+
+    @media (max-width: 720px) {
+        .title-area {
+            h1 {
+                font-size: 2rem;
+            }
+
+            p {
+                font-size: 1rem;
+                text-align: center;
+            }
+        }
+
+        .details-table {
+            width: 100%;
+
+            dl {
+                div {
+                    flex-direction: column;
+                    align-items: center;
+
+                    dt,
+                    dd {
+                        width: auto;
+                        outline: none;
+                        text-align: center;
+                        padding: 0;
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+    }
+
+}
+
+@keyframes twist3d {
+  0% {
+    rotateY: -10deg;
+  }
+  50% {
+    rotateY: 10deg;
+  }
+  100% {
+    rotateY: -10deg;
+  }
+}

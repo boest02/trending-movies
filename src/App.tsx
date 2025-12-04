@@ -7,7 +7,6 @@ import "/src/css/app.css";
 const App = () => {
   return (
     <>
-      <div>Page...</div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/movie/:id" element={<Movie />} />

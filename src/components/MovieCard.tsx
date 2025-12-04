@@ -5,7 +5,7 @@ import type { Movie } from "../api/tmdb";
 
 import "../css/movieCard.css";
 
-const POSTER_BASE_URL = import.meta.env.VITE_POSTER_200_BASE_URL;
+const POSTER_BASE_URL = import.meta.env.VITE_POSTER_SMALL_BASE_URL;
 
 // Props for MovieCard component
 type MovieCardProps = {
