@@ -11,6 +11,7 @@ interface Movie {
   vote_average: number;
   overview: string;
   poster_path: string | null;
+  backdrop_path: string | null;
   release_date: string;
   homepage: string;
   runtime: number;

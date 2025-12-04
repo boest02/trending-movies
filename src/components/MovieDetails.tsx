@@ -66,7 +66,7 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
       {movie.poster_path && (
         <figure>
           <img
-            src={`${POSTER_BASE_URL}${movie.poster_path}`}
+            src={`${POSTER_BASE_URL}${movie.backdrop_path || movie.poster_path}`}
             alt={`Poster for ${movie.title}`}
             loading="lazy"
           />
