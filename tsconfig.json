@@ -1,11 +1,19 @@
 {
   "files": [],
   "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.node.json"
+    }
   ],
   "compilerOptions": {
     // ... other compiler options
-    "types": ["vitest/globals"]
+    "types": [
+      "vitest/globals"
+    ],
+    "strict": true,
+    "skipLibCheck": true
   }
 }

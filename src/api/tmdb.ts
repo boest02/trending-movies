@@ -57,11 +57,15 @@ const fetchMovieById = async (id: string): Promise<Movie> => {
  */
 
 const usePopularMovies = () => {
-  return useQuery({
-    queryKey: ["trending-movies"],
+  return useQuery<Movie[], Error>({
+    queryKey: ['popular-movies'],
     queryFn: fetchPopularMovies,
+    staleTime: 1000 * 60 * 5, // 5 minutes before considered stale
+    refetchOnWindowFocus: true, // refetch when tab is focused
   });
 };
+
+
 
 /*
  * Custom hook that fetches detailed information about a specific movie by its ID.
@@ -78,7 +82,7 @@ const usePopularMovies = () => {
  */
 
 const useMovie = (id: string | undefined) => {
-  return useQuery({
+  return useQuery<Movie, Error>({
     queryKey: ["movie", id],
     queryFn: () => fetchMovieById(id!),
     enabled: !!id,
