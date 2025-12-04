@@ -37,7 +37,7 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         <ImageLoader
           src={`${POSTER_BASE_URL}/${movie.poster_path}`}
           alt={movie.title}
-          height="250px"
+          height="300px"
         />
         <p title={movie.title}>{displayTitle}</p>
       </Link>
