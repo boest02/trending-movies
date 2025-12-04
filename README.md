@@ -62,7 +62,7 @@ There is a sample .env file (.env.sample) that can be copied and the API key can
 
 ```bash
 cp .env.sample .env  # copy sample to .env to configure
-# add your API key to this value in uppercase  vite_tmdb_api_key variable
+# add your API key to this  VITE_TMDB_API_KEY variable
 ```
 
 Start the dev server:
@@ -91,7 +91,7 @@ Possible improvements with more time:
 
 ## 🧾 Notes
 
-Environment variables must start with VITE_ to be exposed to the client by Vite (for example VITE_SOMETHING_SOMETHING).
+Environment variables must start with VITE_ to be exposed to the client by Vite (for example VITE_TMDB_API_KEY).
 
 Do not commit your .env file. It is currently added to .gitignore.
 
