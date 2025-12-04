@@ -95,7 +95,29 @@ Environment variables must start with VITE_ to be exposed to the client by Vite 
 
 Do not commit your .env file. It is currently added to .gitignore.
 
+## 🛠️ NPM Scripts
 
+This project includes a set of useful npm scripts for development, testing, and code validation.
+
+| Script            | Command                                | Description |
+|------------------|----------------------------------------|-------------|
+| `dev`            | `vite`                                 | Starts the development server with hot reloading. |
+| `build`          | `tsc -b && vite build`                 | Compiles TypeScript and builds the production-ready app. |
+| `lint`           | `eslint .`                             | Runs ESLint on the project to catch code style and formatting issues. |
+| `preview`        | `vite preview`                         | Serves the production build locally for previewing. |
+| `test`           | `vitest --run`                         | Runs all tests once (no watch mode). |
+| `test:tree`      | `vitest --run --reporter tree`         | Runs all tests with a tree-style reporter for better readability. |
+| `test:watch`     | `vitest --watch`                       | Runs tests in watch mode, automatically re-running on file changes. |
+| `validate`       | `npm run lint && npm run test:tree`    | Runs linting and tests sequentially to ensure the code is valid and ready to commit. |
+
+💡 *Notes:*
+- 'validate' is handy as a pre-commit or pre-check step, and could be used in a CI/CD environment.
+- Before running 'preview' be sure to run a 'build'
+- You can run any of these scripts with
+
+```bash
+npm run <script-name>
+```
 
 
 

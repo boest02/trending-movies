@@ -8,9 +8,10 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "test": "vitest",
-    "test:tree": "vitest --reporter tree",
-    "test:watch": "vitest --watch"
+    "test": "vitest --run",
+    "test:tree": "vitest --run --reporter tree",
+    "test:watch": "vitest --watch",
+    "validate": "npm run lint && npm run test:tree"
   },
   "dependencies": {
     "@tanstack/react-query": "^5.90.11",
