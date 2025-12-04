@@ -1,15 +1,17 @@
 .movie-card {
-    position: relative;    
+    position: relative;
+    /* white box shadow  */
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
     filter: drop-shadow(.5rem .5rem 0.7rem #000);
     padding-bottom: 10px;
     min-height: 330px;
-    min-width: 170px;
+    min-width: 165px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 
     &:hover,
     &:focus-within {
         box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.7);
-        border-bottom-left-radius: 5px; 
-        border-bottom-right-radius: 5px;
         scale: 1.01;
     }
 
