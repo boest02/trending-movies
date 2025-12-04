@@ -1,5 +1,6 @@
 .favorite-btn {
     position: absolute;
+    z-index: 10;
     top: 5px;
     right: 5px;
     padding: 2px 5px;
