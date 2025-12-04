@@ -15,7 +15,7 @@
         h1 {
             margin: 10px;
             font-size: 2.3rem;
-            ;
+            filter: drop-shadow(.15rem .15rem .12rem #fff);
         }
 
         p {
@@ -24,6 +24,10 @@
             text-align: left;
             font-size: 1rem;
             font-style: italic;
+
+            a {
+                color: red;
+            }
         }
     }
 
@@ -120,13 +124,15 @@
 }
 
 @keyframes twist3d {
-  0% {
-    rotateY: -10deg;
-  }
-  50% {
-    rotateY: 10deg;
-  }
-  100% {
-    rotateY: -10deg;
-  }
+    0% {
+        rotateY: -10deg;
+    }
+
+    50% {
+        rotateY: 10deg;
+    }
+
+    100% {
+        rotateY: -10deg;
+    }
 }
