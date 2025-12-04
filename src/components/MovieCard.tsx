@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import Favorite from "./Favorite.tsx";
+import ImageLoader from "./ImageLoader.tsx";
 import { useFavorites } from "../hooks/useFavorites";
 import type { Movie } from "../api/tmdb";
 
@@ -33,10 +34,10 @@ const MovieCard: React.FC<MovieCardProps> = ({ movie }) => {
         onToggle={() => toggleFavorite(movie.id)}
       />
       <Link to={`/movie/${movie.id}`}>
-        <img
+        <ImageLoader
           src={`${POSTER_BASE_URL}/${movie.poster_path}`}
           alt={movie.title}
-          loading="lazy"
+          height="250px"
         />
         <p title={movie.title}>{displayTitle}</p>
       </Link>

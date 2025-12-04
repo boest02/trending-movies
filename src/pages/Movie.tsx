@@ -1,7 +1,8 @@
+import MovieDetails from "../components/MovieDetails";
+import Loader from "../components/Loader";
+
 import { useParams, useNavigate } from "react-router-dom";
 import { useMovie } from "../api/tmdb";
-
-import MovieDetails from "../components/MovieDetails";
 
 /**
  * Movie Page Component
@@ -17,9 +18,8 @@ const Movie = () => {
 
   // Fetch movie details using the custom hook
   const { data: movie, isLoading, error } = useMovie(id);
-  if (isLoading) {
-    return <p>Loading movie details...</p>;
-  }
+  
+  if (isLoading) return <Loader message="Loading movie details..." />;  
 
   if (error)
     return (

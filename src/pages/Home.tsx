@@ -1,4 +1,6 @@
 import MovieCard from "../components/MovieCard";
+import Loader from "../components/Loader";
+
 import { usePopularMovies } from "../api/tmdb";
 
 // import css
@@ -12,7 +14,7 @@ import "../css/home.css";
 const Home = () => {
   const { data: movies, isLoading, error } = usePopularMovies();
 
-  if (isLoading) return <p data-testid="loading-test">Loading movies...</p>;
+  if (isLoading) return <Loader message="We'll be right there..." />; 
 
   if (error)
     return (

@@ -1,0 +1,69 @@
+/* Container */
+.ml-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5rem;
+    min-height: 550px;
+    color: #e6eef8;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+}
+
+
+/* Actions row */
+.ml-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+}
+
+/* Spinner */
+.ml-spinner {
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
+    border: 4px solid rgba(255, 255, 255, 0.06);
+    border-top-color: #7dd3fc;
+    /* light accent */
+    animation: spin 0.9s linear infinite;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), inset 0 -3px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Message */
+.ml-message {
+    font-size: 0.975rem;
+    color: #cfe8ff;
+    opacity: 0.95;
+}
+
+/* Shimmer keyframes */
+@keyframes shimmer {
+    0% {
+        background-position: -200% 0;
+    }
+
+    100% {
+        background-position: 200% 0;
+    }
+}
+
+/* Spinner */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Accessibility helper - visually hidden */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+    border: 0;
+    padding: 0;
+    margin: -1px;
+}

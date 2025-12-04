@@ -1,4 +1,5 @@
 import Favorite from "./Favorite.tsx";
+import ImageLoader from "./ImageLoader.tsx";
 import { useFavorites } from "../hooks/useFavorites";
 import type { Movie } from "../api/tmdb";
 
@@ -64,11 +65,13 @@ const MovieDetails: React.FC<MovieDetailsProps> = ({ movie }) => {
       )}
 
       {movie.poster_path && (
-        <figure>
-          <img
-            src={`${POSTER_BASE_URL}${movie.backdrop_path || movie.poster_path}`}
+        <figure>         
+          <ImageLoader
+            src={`${POSTER_BASE_URL}${
+              movie.backdrop_path || movie.poster_path
+            }`}
             alt={`Poster for ${movie.title}`}
-            loading="lazy"
+            height="250px"
           />
         </figure>
       )}

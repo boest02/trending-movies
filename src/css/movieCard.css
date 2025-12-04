@@ -2,6 +2,8 @@
     position: relative;    
     filter: drop-shadow(.5rem .5rem 0.7rem #000);
     padding-bottom: 10px;
+    min-height: 330px;
+    min-width: 170px;
 
     &:hover,
     &:focus-within {
@@ -13,6 +15,7 @@
 
     img {
         height: 250px;
+        background: #000;
     }
 
     p {
